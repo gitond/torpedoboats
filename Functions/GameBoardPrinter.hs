@@ -6,7 +6,6 @@ gameBoardPrinter :: Board -> IO()
 gameBoardPrinter b = do
     xCoordPrinter
     playAreaPrinter b 0
-    putStrLn "Game board goes here"
 
 xCoordPrinter :: IO()
 xCoordPrinter = putStrLn "    A | B | C | D | E | F | G | H | I | J |"
