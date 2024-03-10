@@ -1,0 +1,31 @@
+programming paradigms in practice programming excercise specs:
+
+---
+Project:
+Functional Battleship game with Haskell
+
+Codename:
+Torpedoboats
+
+todo: 
+- implement the game (Battleship) using the language (Haskell)
+	- game board printer
+	- input parser with support for
+		- game mechanics
+			- placing ships
+			- shooting
+		- dev time commands
+			- print opponent's ship placement
+	- win/lose condition checking
+	- "ai" which randomly shoots until it hits ship
+	- basic logic for game mechanics (hits, coordinates, adjacency)
+- test the game and assure that it behaves as intended
+- document how you used the language (Haskell) and paradigm (lazy functional programming)
+
+---
+rough schedule:
+project week 1: plan + setup dev env + programming session 1
+project week 2: programming session 2 (also begin weeklies here!)
+project week 3: programming session 3
+project week 4: testing session
+project week 5: write documentation
