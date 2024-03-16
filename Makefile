@@ -2,7 +2,7 @@
 CC = ghc		# the compiler
 EX = torpedoboats	# main executable outputted by the compiler
 # main program dependencies
-MAINDEP = torpedoboats.hs Datatypes/Board.hs Functions/GameBoardPrinter.hs
+MAINDEP = torpedoboats.hs Datatypes/Board.hs Functions/GameBoardPrinter.hs Functions/GameBoardMutator.hs
 
 # main compilation process
 all: $(MAINDEP)
