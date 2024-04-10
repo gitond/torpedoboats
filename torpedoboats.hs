@@ -6,6 +6,7 @@ import Data.Maybe
 import Datatypes.Board
 import Functions.GameBoardPrinter
 import Functions.GameBoardMutator
+import Functions.PlaceShips
 
 main = do
     putStrLn " TORPEDOBOATS: A Battleship game in Haskell"
@@ -34,17 +35,7 @@ gameLoop pBoard eBoard shipsToPlace = do
         (if shipsToPlace > 0 then do -- placing ships
             putStrLn "(V)ertical or (H)orizontal ship? "
             vertChoice <- getLine
-           -- Trouble with this part: compiler throws error for closing ')' but wont compile without it
---            (if (vertChoice == "v") then -- || (vertChoice == "V")
---                then --do
---                putStrLn "Vertical ship starting at"
---                putStrLn inp
---            else if (vertChoice == "v") || (vertChoice == "V") then do
---                putStr "Horizontal ship starting at"
---                putStrLn inp
---            else putStrLn "Sorry didn't quite get that"
---            )
-            gameLoop (gameBoardMutator pBoard '□' (fromMaybe (-1) (elemIndex (toLower (inp !! 0)) "abcdefghij")) (digitToInt (inp !! 1))) eBoard (shipsToPlace - 1)
+            gameLoop (fst (placeShips pBoard eBoard shipsToPlace (fromMaybe (-1) (elemIndex (toLower (inp !! 0)) "abcdefghij")) (digitToInt (inp !! 1)) vertChoice)) (snd (placeShips pBoard eBoard shipsToPlace (fromMaybe (-1) (elemIndex (toLower (inp !! 0)) "abcdefghij")) (digitToInt (inp !! 1)) vertChoice)) (shipsToPlace - 1)
         else do -- shooting
             gameLoop pBoard (gameBoardMutator eBoard '~' (fromMaybe (-1) (elemIndex (toLower (inp !! 0)) "abcdefghij")) (digitToInt (inp !! 1))) shipsToPlace
         )
